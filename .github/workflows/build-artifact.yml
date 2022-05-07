@@ -20,3 +20,24 @@ jobs:
         with:
           name: ${{ format('Release {0}', matrix.arch) }}
           path: projects/linux/gmake/**/*.dll
+  windows-builds:
+    strategy:
+      matrix:
+        arch: ['Win32', 'x64']
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - uses: abel0b/setup-premake@v2.1
+        with:
+          version: '5.0.0-beta1'
+      - uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: '[17.0,17.2)'
+      - run: premake5 vs2022
+      - run: ${{ format('msbuild projects/windows/vs2022/lanes.core.sln /p:Configuration=Release /p:Platform={0}', matrix.arch) }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('Release {0}', matrix.arch) }}
+          path: projects/windows/vs2022/**/*.dll
