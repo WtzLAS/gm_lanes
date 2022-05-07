@@ -13,6 +13,7 @@ jobs:
       - uses: abel0b/setup-premake@v2.1
         with:
           version: '5.0.0-beta1'
+      - run: sudo apt-get install gcc-multilib g++-multilib
       - run: premake5 gmake
       - run: ${{ format('make -C projects/linux/gmake config=release_{0}', matrix.arch) }}
       - uses: actions/upload-artifact@v3
