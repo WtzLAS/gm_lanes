@@ -18,7 +18,7 @@ jobs:
       - run: ${{ format('make -C projects/linux/gmake config=release_{0}', matrix.arch) }}
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('Release {0}', matrix.arch) }}
+          name: ${{ format('Linux {0}', matrix.arch) }}
           path: projects/linux/gmake/**/*.dll
   windows-builds:
     strategy:
@@ -39,5 +39,5 @@ jobs:
       - run: ${{ format('msbuild projects/windows/vs2022/lanes.core.sln /p:Configuration=Release /p:Platform={0}', matrix.arch) }}
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('Release {0}', matrix.arch) }}
+          name: ${{ format('Windows {0}', matrix.arch) }}
           path: projects/windows/vs2022/**/*.dll
