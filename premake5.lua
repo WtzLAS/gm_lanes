@@ -6,17 +6,20 @@ local LANES_DIRECTORY = "lanes/src"
 CreateWorkspace({name = "lanes.core"})
 	CreateProject({serverside = true})
 		includedirs(LANES_DIRECTORY)
+		buildoptions("-pthread")
 		links("lanes")
 		IncludeLuaShared()
 
 	CreateProject({serverside = false})
 		includedirs(LANES_DIRECTORY)
+		buildoptions("-pthread")
 		links("lanes")
 		IncludeLuaShared()
 
 	project("lanes")
 		kind("StaticLib")
 		warnings("Default")
+		buildoptions("-pthread")
 		includedirs({LANES_DIRECTORY, path.join(gmcommon, "include")})
 		files({path.join(LANES_DIRECTORY, "*.c"), path.join(LANES_DIRECTORY, "*.h")})
 		vpaths({
