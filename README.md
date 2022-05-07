@@ -18,3 +18,11 @@ b = f(2)
 
 print(a[1], b[1])
 ```
+
+## Build
+
+First, install `premake5`.
+
+Then, run `premake5 [vs20**/gmake/xcode]` according to your OS.
+
+And head to `projects` folder to start building.
