@@ -14,8 +14,8 @@ jobs:
         with:
           version: '5.0.0-beta1'
       - run: premake5 gmake
-      - run: ${{ format('make -C projects/linux/gmake config=release_{0}', ${{ matrix.arch }}) }}
+      - run: ${{ format('make -C projects/linux/gmake config=release_{0}', matrix.arch) }}
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('Release {0}', ${{ matrix.arch }}) }}
+          name: ${{ format('Release {0}', matrix.arch) }}
           path: projects/linux/gmake/**/*.dll
