@@ -1,12 +1,20 @@
 # gm_lanes
-An updated version of lanes for glua.
 
-See 'Releases' for download.
-
-Uses [garrysmod_common](https://github.com/danielga/garrysmod_common) to build.
+An updated version of lanes for gmod.
 
 ## Usage
 
-Put two dll files into `garrysmod\lua\bin` and the lua file into `lua\includes\modules`.
+Put dll files into `garrysmod\lua\bin` and lua files into `lua\includes\modules`.
 
-Then `require "lanes"` and you are good to go.
+## Example
+
+```lua
+require "lanes"
+
+local f = lanes.gen(function (n) return n * 2 end)
+
+a = f(1)
+b = f(2)
+
+print(a[1], b[1])
+```
