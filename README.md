@@ -2,14 +2,17 @@
 
 An updated version of lanes for gmod.
 
-## Usage
+## Installation
 
-Put dll files into `garrysmod\lua\bin` and lua files into `lua\includes\modules`.
+Put dll files into `garrysmod/lua/bin` and `lanes.lua` into `garrysmod/lua/includes/modules`.
+
+`lanes.lua` could be found in `lanes` repo under `src`.
 
 ## Example
 
 ```lua
-require "lanes"
+-- this will set global variable `lanes` to what we need cause gmod uses Lua 5.1
+require("lanes")
 
 local f = lanes.gen(function (n) return n * 2 end)
 
@@ -19,10 +22,16 @@ b = f(2)
 print(a[1], b[1])
 ```
 
+Refer to [the repo](https://github.com/LuaLanes/lanes) and [the docs](http://lualanes.github.io/lanes/) for more information.
+
 ## Build
 
 First, install `premake5`.
 
-Then, run `premake5 [vs20**/gmake/xcode]` according to your OS.
+Then, run `premake5 [vs20**/gmake/xcode]` according to your configuration at the root dir of the repo.
 
 And head to `projects` folder to start building.
+
+Dll files will be in `projects/[OS]/[Tool]/[Configuration]/[Platform]/`.
+
+`lanes.lua` could be found in `lanes` repo under `src`.

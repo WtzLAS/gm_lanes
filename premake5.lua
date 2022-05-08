@@ -30,7 +30,6 @@ CreateWorkspace({name = "lanes.core"})
 			["Header files/*"] = path.join(LANES_DIRECTORY, "*.h")
 		})
 		IncludeLuaShared()
-
 		filter("system:linux")
 			defines("_GNU_SOURCE")
 			buildoptions("-pthread")
