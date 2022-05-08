@@ -10,6 +10,8 @@ Put dll files into `garrysmod/lua/bin` and `lanes.lua` into `garrysmod/lua/inclu
 
 `lanes.lua` could be found in `lanes` repo under `src`.
 
+To enable StarfallEx support, put `starfallex/lanes.lua` into `garrysmod/addons/StarfallEx/lua/starfall/libs_sh`.
+
 ## Example
 
 ```lua
