@@ -28,6 +28,8 @@ b = f(2)
 print(a[1], b[1])
 ```
 
+Notice that in StarfallEx there's no need to `require("lanes")`.
+
 Refer to [the repo](https://github.com/LuaLanes/lanes) and [the docs](http://lualanes.github.io/lanes/) for more information.
 
 ## Build
