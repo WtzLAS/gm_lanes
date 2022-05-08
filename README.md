@@ -12,6 +12,8 @@ Put dll files into `garrysmod/lua/bin` and `lanes.lua` into `garrysmod/lua/inclu
 
 To enable StarfallEx support, put `starfallex/lanes.lua` into `garrysmod/addons/StarfallEx/lua/starfall/libs_sh`.
 
+⚠️ Warning: Lanes can bypass StarfallEx's CPU quota limit and lag/crash gmod servers. ⚠️
+
 ## Example
 
 ```lua
