@@ -4,6 +4,8 @@ An updated version of lanes for gmod.
 
 ## Installation
 
+Prebuilt binaries can be found in `Actions` tab above.
+
 Put dll files into `garrysmod/lua/bin` and `lanes.lua` into `garrysmod/lua/includes/modules`.
 
 `lanes.lua` could be found in `lanes` repo under `src`.
