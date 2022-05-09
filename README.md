@@ -8,11 +8,9 @@ Prebuilt binaries can be found in `Actions` tab above.
 
 Put dll files into `garrysmod/lua/bin` and `lanes.lua` into `garrysmod/lua/includes/modules`.
 
-`lanes.lua` could be found in `lanes` repo under `src`.
+To enable Starfall support, put `starfall/lanes.lua` into `garrysmod/addons/StarfallEx/lua/starfall/libs_sh`.
 
-To enable StarfallEx support, put `starfallex/lanes.lua` into `garrysmod/addons/StarfallEx/lua/starfall/libs_sh`.
-
-⚠️ Warning: Lanes can bypass StarfallEx's CPU quota limit and lag/crash gmod servers. ⚠️
+⚠️ Warning: Lanes can bypass Starfall's CPU quota limit and crash your server. See below sections for more details. ⚠️
 
 ## Example
 
@@ -31,6 +29,15 @@ print(a[1], b[1])
 Notice that in StarfallEx there's no need to `require("lanes")`.
 
 Refer to [the repo](https://github.com/LuaLanes/lanes) and [the docs](http://lualanes.github.io/lanes/) for more information.
+
+## Starfall Support
+
+The CPU time consumed by lanes is not limited by Starfall's CPU quota system,
+so an attacker could open enormous number of lanes or use other ways to lag or crash servers.
+
+To limit its usage, permissions `lanes.create` and `lanes.linda` are provided.
+
+Make sure that permissions are set up correctly.
 
 ## Build
 
